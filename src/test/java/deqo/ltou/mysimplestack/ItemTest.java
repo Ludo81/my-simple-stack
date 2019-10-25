@@ -46,4 +46,10 @@ public class ItemTest {
         s1.push(i2);
         assertEquals(s1.pop(), i2);
     }
+
+    @Test
+    public void isEmptyTestFalse(){
+        s1.push(i1);
+        assertEquals(s1.isEmpty(),false);
+    }
 }
