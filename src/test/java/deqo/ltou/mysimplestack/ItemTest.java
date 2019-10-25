@@ -23,4 +23,11 @@ public class ItemTest {
         Item item = new Item();
         assertEquals(5, item.setNum(5));
     }
+
+    @Test
+    public void setNumTest2()
+    {
+        Item item = new Item();
+        assertEquals(5, item.setNum(4));
+    }
 }
