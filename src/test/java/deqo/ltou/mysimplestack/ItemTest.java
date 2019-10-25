@@ -1,13 +1,24 @@
 package deqo.ltou.mysimplestack;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import java.util.EmptyStackException;
 
 import static org.junit.Assert.*;
 
 public class ItemTest {
 
+    private SimpleStackImp s1 = new SimpleStackImp();
+    private Item i1 = new Item();
+    private Item i2 = new Item();
 
+    @Before
+    public void setUp() throws Exception{
+        i1.setNum(5);
+        i2.setNum(6);
+    }
 
     @Test
     public void getNumTest() {
@@ -18,16 +29,21 @@ public class ItemTest {
     }
 
     @Test
-    public void setNumTest()
-    {
-        Item item = new Item();
-        assertEquals(5, item.setNum(5));
+    public void isEmptyTest(){
+        assertEquals(s1.isEmpty(), true);
     }
 
     @Test
-    public void setNumTest2()
-    {
-        Item item = new Item();
-        assertEquals(5, item.setNum(4));
+    public void getSizeTest(){
+        assertEquals(s1.getSize(),0);
+        s1.push(i1);
+        assertEquals(s1.getSize(), 1);
+    }
+
+    @Test
+    public void popTest(){
+        s1.push(i1);
+        s1.push(i2);
+        assertEquals(s1.pop(), i2);
     }
 }
