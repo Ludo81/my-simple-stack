@@ -52,4 +52,10 @@ public class ItemTest {
         s1.push(i1);
         assertEquals(s1.isEmpty(),false);
     }
+
+    @Test
+    public void popNullTest(){
+        s1.push(null);
+        assertEquals(s1.pop(),null);
+    }
 }
